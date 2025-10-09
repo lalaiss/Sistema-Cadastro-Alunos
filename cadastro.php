@@ -21,12 +21,13 @@
   $curso = $_POST['curso'];
   $email = $_POST['email'] ;
   $telefone = $_POST['telefone'];
-            
+  
+  // Insere os dados no banco
   $sql = "INSERT INTO `alunos`( `nome`, `matricula`, `curso`, `email`, `telefone`) 
   VALUES ('$nome','$matricula','$curso','$email','$telefone')";
    
 
-  if(mysqli_query($conexao, $sql)) { // API(Swet-Alert) de pop-up para mostrar se o aluno foi cadastrado
+  if(mysqli_query($conexao, $sql)) { // (Swet-Alert) de pop-up para mostrar se o aluno foi cadastrado
   echo "<script>
   Swal.fire({
   title: 'Sucesso!',
@@ -85,9 +86,7 @@
   <td>{$aluno['email']}</td>
   <td>{$aluno['telefone']}</td>
     <td>
-    <a href='editar.php' class= 'btn btn-success btn-sn' id = " . $aluno['id'] .">
-    ✏️Editar Aluno
-    </a>
+      <a href='editar.php?id=" . $aluno['id']  . "'class= 'btn btn-success btn-sn'>✏️Editar Aluno</a>
     </td>
     <td>
     <a  href='excluir.php? id= " . $aluno['id'] .  "' onclick=\"return confirm ('Tem certeza que deseja excluir este aluno?');\">
