@@ -18,8 +18,7 @@
         // Query para deletar o registro
         $query = "DELETE FROM alunos WHERE id=$id";
 
-        if (mysqli_query($conexao, $query)) {
-        // Redireciona para a página inicial com mensagem de sucesso (opcional)
+        if (mysqli_query($conexao, $query)) {// Redireciona para a página inicial com mensagem de sucesso (opcional)
         header("Location: cadastro.php");
         exit();
         } else {
@@ -27,6 +26,7 @@
         }
 
         mysqli_close($conexao);
+        
         ?>
   </body>
 </html>
