@@ -11,4 +11,6 @@ if(!$conexao) {
     die("Erro de conexão com o banco. Detalhes: " . mysqli_connect_error());
 }
 
+
+
 ?>
